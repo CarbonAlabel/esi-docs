@@ -66,9 +66,7 @@ def warpin(id, x, y, z, r):
 
 The skillpoints needed for a level depend on the skill rank.
 
-```math
- y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank}
- ```
+$$ y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank} $$
 
 ### Skillpoints for common ranks
 
@@ -122,4 +120,4 @@ The ship alignment time (`$ t_{align} $`) depends on the ship's inertia modifier
 t_{align} = { ln(2) \cdot i \cdot m \over 500000 }
 ```
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=default"></script>
