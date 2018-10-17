@@ -8,7 +8,7 @@ Many external factors may disrupt a warp, e.g. warp disruption fields, insuffici
 
 An ordinary object is any object that does not fall withing any of the other categories described below.
 
-Let the 3D vectors $ p_d $ and $ p_s $ represent the object's position and the warp's origin, respectively; and $ \vec{v} $ the directional vector from $ p_s $ to $ p_d $. Let $ r $ be the object's radius.
+Let the 3D vectors ``$ p_d $`` and ``$ p_s $`` represent the object's position and the warp's origin, respectively; and ``$ \vec{v} $`` the directional vector from ``$ p_s $`` to ``$ p_d $``. Let ``$ r $`` be the object's radius.
 
 The object's warp-in point is the vector ``$ p_s + \vec{v} - r\hat{v} $``.
 
@@ -66,7 +66,9 @@ def warpin(id, x, y, z, r):
 
 The skillpoints needed for a level depend on the skill rank.
 
-$$ y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank} $$
+```math
+ y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank}
+ ```
 
 ### Skillpoints for common ranks
 
