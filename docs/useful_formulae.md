@@ -8,7 +8,7 @@ Many external factors may disrupt a warp, e.g. warp disruption fields, insuffici
 
 An ordinary object is any object that does not fall withing any of the other categories described below.
 
-Let the 3D vectors ``$ p_d $`` and ``$ p_s $`` represent the object's position and the warp's origin, respectively; and ``$ \vec{v} $`` the directional vector from ``$ p_s $`` to ``$ p_d $``. Let ``$ r $`` be the object's radius.
+Let the 3D vectors $ p_d $ and $ p_s $ represent the object's position and the warp's origin, respectively; and $ \vec{v} $ the directional vector from $ p_s $ to $ p_d $. Let $ r $ be the object's radius.
 
 The object's warp-in point is the vector ``$ p_s + \vec{v} - r\hat{v} $``.
 
@@ -122,4 +122,4 @@ The ship alignment time (`$ t_{align} $`) depends on the ship's inertia modifier
 t_{align} = { ln(2) \cdot i \cdot m \over 500000 }
 ```
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
