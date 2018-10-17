@@ -8,41 +8,35 @@ Many external factors may disrupt a warp, e.g. warp disruption fields, insuffici
 
 An ordinary object is any object that does not fall withing any of the other categories described below.
 
-Let the 3D vectors ``$ p_d $`` and ``$ p_s $`` represent the object's position and the warp's origin, respectively; and ``$ \vec{v} $`` the directional vector from ``$ p_s $`` to ``$ p_d $``. Let ``$ r $`` be the object's radius.
+Let the 3D vectors $ p_d $ and $ p_s $ represent the object's position and the warp's origin, respectively; and $ \vec{v} $ the directional vector from $ p_s $ to $ p_d $. Let $ r $ be the object's radius.
 
-The object's warp-in point is the vector ``$ p_s + \vec{v} - r\hat{v} $``.
+The object's warp-in point is the vector $ p_s + \vec{v} - r\hat{v} $.
 
 ## Large Objects
 
 A large object is any celestial body whose radius exceeds 90 kilometres (180 kilometres in diameter), except planets.
 
-Let ``$ x $``, ``$ y $``, and ``$ z $`` represent the object's coordinates. Let ``$ r $`` be the object's radius.
+Let $ x $, $ y $, and $ z $ represent the object's coordinates. Let $ r $ be the object's radius.
 
-The object's warp-in point is the vector ``$ \left(x + (r + 5000000)\cos{r} \\,
+The object's warp-in point is the vector $ \left(x + (r + 5000000)\cos{r} \\,
   y + 1.3r - 7500 \\,
-  z - (r + 5000000)\sin{r} \\  \right). $``
+  z - (r + 5000000)\sin{r} \\  \right). $
 
 ## Planets
 
 The warp-in point of a planet is determined by the planet's ID, its location, and radius.
 
-Let ``$ x $``, ``$ y $``, and ``$ z $`` represent the planet's coordinates. Let ``$ r $`` be the planet's radius.
+Let $ x $, $ y $, and $ z $ represent the planet's coordinates. Let $ r $ be the planet's radius.
 
-The planet's warp-in point is the vector ``$ \left(x + d \sin{\theta}, y + \frac{1}{2} r \sin{j}, z - d \cos{\theta}\right) $``
+The planet's warp-in point is the vector $ \left(x + d \sin{\theta}, y + \frac{1}{2} r \sin{j}, z - d \cos{\theta}\right) $
 where:
 
-```math
-d = r(s + 1) + 1000000
-```
-```math
- \theta = \sin^{-1}\left(\frac{x}{|x|} \cdot \frac{z}{\sqrt{x^2 + z^2}}\right) + j
-```
-```math
- s|_{0.5 \leq s \leq 10.5} = 20\left(\frac{1}{40}\left(10\log_{10}\left(\frac{r}{10^6}\right) - 39\right)\right)^{20} + \frac{1}{2}
-```
+$$ d = r(s + 1) + 1000000 $$
+$$ \theta = \sin^{-1}\left(\frac{x}{|x|} \cdot \frac{z}{\sqrt{x^2 + z^2}}\right) + j $$
+$$ s|_{0.5 \leq s \leq 10.5} = 20\left(\frac{1}{40}\left(10\log_{10}\left(\frac{r}{10^6}\right) - 39\right)\right)^{20} + \frac{1}{2} $$
 
-Now, ``$ j $`` is a special snowflake. Its value is the Python equivalent of<br/>
-`(random.Random(planetID).random() - 1.0) / 3.0`.
+
+Now, $ j $ is a special snowflake. Its value is the Python equivalent of `(random.Random(planetID).random() - 1.0) / 3.0`.
 
 ### Example Implementation
 
@@ -66,9 +60,8 @@ def warpin(id, x, y, z, r):
 
 The skillpoints needed for a level depend on the skill rank.
 
-```math
- y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank}
- ```
+$$ y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank} $$
+ 
 
 ### Skillpoints for common ranks
 
@@ -98,31 +91,27 @@ The skillpoints needed for a level depend on the skill rank.
 
 ## Skillpoints per minute
 
-The skillpoints generated each minute depend on the primary ``$ (a_{primary}) $`` and secondary attribute ``$ (a_{secondary}) $`` of the skill.
+The skillpoints generated each minute depend on the primary $ (a_{primary}) $ and secondary attribute $ (a_{secondary}) $ of the skill.
 
-```math
-y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2}
-```
+$$ y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2} $$
+
 
 # Combat
 
 ## Target lock time
 
-The target lock time (`$ t_{targetlock} $`) in seconds depends on the ship's scan resolution (`$ s $`) and the target's signature radius (`$ r $`)
+The target lock time ($ t_{targetlock} $) in seconds depends on the ship's scan resolution ($ s $) and the target's signature radius ($ r $)
 
-```math
-t_{targetlock} = {40000 \over s \cdot asinh(r)^2}
-```
+$$ t_{targetlock} = {40000 \over s \cdot asinh(r)^2} $$
+
 
 ## Alignment time
 
-The ship alignment time (`$ t_{align} $`) depends on the ship's inertia modifier (`$ i $`) and the ships mass (`$ m $`)
+The ship alignment time ($ t_{align} $) depends on the ship's inertia modifier ($ i $) and the ships mass ($ m $)
 
-```math
-t_{align} = { ln(2) \cdot i \cdot m \over 500000 }
-```
+$$ t_{align} = { ln(2) \cdot i \cdot m \over 500000 } $$
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"></script>
-<script>renderMathInElement(document.body);</script>
+<script>renderMathInElement(document.body, {delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}]});</script>
