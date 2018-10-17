@@ -112,4 +112,4 @@ The ship alignment time ($ t_{align} $) depends on the ship's inertia modifier (
 $$ t_{align} = { ln(2) \cdot i \cdot m \over 500000 } $$
 
 <script type="text/javascript">window.MathJax = {tex2jax: {inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true}};</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k="></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
