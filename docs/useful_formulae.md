@@ -93,7 +93,7 @@ $$ y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank} $$
 
 The skillpoints generated each minute depend on the primary $ (a_{primary}) $ and secondary attribute $ (a_{secondary}) $ of the skill.
 
-$$ y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2} $$
+$$$ y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2} $$$
 
 
 # Combat
@@ -102,16 +102,16 @@ $$ y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2} $$
 
 The target lock time ($ t_{targetlock} $) in seconds depends on the ship's scan resolution ($ s $) and the target's signature radius ($ r $)
 
-$$ t_{targetlock} = {40000 \over s \cdot asinh(r)^2} $$
+$$$ t_{targetlock} = {40000 \over s \cdot asinh(r)^2} $$$
 
 
 ## Alignment time
 
 The ship alignment time ($ t_{align} $) depends on the ship's inertia modifier ($ i $) and the ships mass ($ m $)
 
-$$ t_{align} = { ln(2) \cdot i \cdot m \over 500000 } $$
+$$$ t_{align} = { ln(2) \cdot i \cdot m \over 500000 } $$$
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"></script>
-<script>renderMathInElement(document.body, {delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}]});</script>
+<script>renderMathInElement(document.body, {delimiters: [{left: "$$$", right: "$$$", display: true}, {left: "$", right: "$", display: false}]});</script>
