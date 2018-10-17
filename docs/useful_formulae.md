@@ -31,9 +31,9 @@ Let $ x $, $ y $, and $ z $ represent the planet's coordinates. Let $ r $ be the
 The planet's warp-in point is the vector $ \left(x + d \sin{\theta}, y + \frac{1}{2} r \sin{j}, z - d \cos{\theta}\right) $
 where:
 
-$$ d = r(s + 1) + 1000000 $$
-$$ \theta = \sin^{-1}\left(\frac{x}{|x|} \cdot \frac{z}{\sqrt{x^2 + z^2}}\right) + j $$
-$$ s|_{0.5 \leq s \leq 10.5} = 20\left(\frac{1}{40}\left(10\log_{10}\left(\frac{r}{10^6}\right) - 39\right)\right)^{20} + \frac{1}{2} $$
+€€ d = r(s + 1) + 1000000 €€
+€€ \theta = \sin^{-1}\left(\frac{x}{|x|} \cdot \frac{z}{\sqrt{x^2 + z^2}}\right) + j €€
+€€ s|_{0.5 \leq s \leq 10.5} = 20\left(\frac{1}{40}\left(10\log_{10}\left(\frac{r}{10^6}\right) - 39\right)\right)^{20} + \frac{1}{2} €€
 
 
 Now, $ j $ is a special snowflake. Its value is the Python equivalent of `(random.Random(planetID).random() - 1.0) / 3.0`.
@@ -60,7 +60,7 @@ def warpin(id, x, y, z, r):
 
 The skillpoints needed for a level depend on the skill rank.
 
-$$ y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank} $$
+€€ y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank} €€
  
 
 ### Skillpoints for common ranks
@@ -93,7 +93,7 @@ $$ y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank} $$
 
 The skillpoints generated each minute depend on the primary $ (a_{primary}) $ and secondary attribute $ (a_{secondary}) $ of the skill.
 
-$$$ y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2} $$$
+€€ y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2} €€
 
 
 # Combat
@@ -102,16 +102,16 @@ $$$ y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2} $$$
 
 The target lock time ($ t_{targetlock} $) in seconds depends on the ship's scan resolution ($ s $) and the target's signature radius ($ r $)
 
-$$$ t_{targetlock} = {40000 \over s \cdot asinh(r)^2} $$$
+€€ t_{targetlock} = {40000 \over s \cdot asinh(r)^2} €€
 
 
 ## Alignment time
 
 The ship alignment time ($ t_{align} $) depends on the ship's inertia modifier ($ i $) and the ships mass ($ m $)
 
-$$$ t_{align} = { ln(2) \cdot i \cdot m \over 500000 } $$$
+€€ t_{align} = { ln(2) \cdot i \cdot m \over 500000 } €€
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"></script>
-<script>renderMathInElement(document.body, {delimiters: [{left: "$$$", right: "$$$", display: true}, {left: "$", right: "$", display: false}]});</script>
+<script>renderMathInElement(document.body, {delimiters: [{left: "€€", right: "€€", display: true}, {left: "$", right: "$", display: false}]});</script>
